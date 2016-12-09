@@ -15,10 +15,11 @@ PHP 作为一个 WEB 专门的语言，最常用的方式就是嵌入到 cgi 程
 
 > This is especially problematic in long running scripts, such as daemons where the request basically never ends, or in large sets of unit tests
 
-显然 PHP 团队意识到了这个问题，并且也试图去解决它，他们引入了 GC [Collecting Cycles][link3]，但是很明显，这个 GC 功能更像是一个实验性的功能，比如
+显然 PHP 团队意识到了这个问题，并且也试图去解决它，他们引入了 GC [Collecting Cycles][link3]，但是很明显，这个 GC 功能更像是一个实验性的功能，比如限制了 possible roots 的数量，并且修改这个值需要重新编译 PHP 源码：
 
 > The root buffer has a fixed size of 10,000 possible roots (although you can alter this by changing the GC_ROOT_BUFFER_MAX_ENTRIES constant in Zend/zend_gc.c in the PHP source code
 
+不被记录的 root 如果发生了循环引用将永远不能被 GC 检测到:
 
 > If the root buffer becomes full with possible roots while the garbage collection mechanism is turned off, further possible roots will simply not be recorded. Those possible roots that are not recorded will never be analyzed by the algorithm. If they were part of a circular reference cycle, they would never be cleaned up and would create a memory leak
 
