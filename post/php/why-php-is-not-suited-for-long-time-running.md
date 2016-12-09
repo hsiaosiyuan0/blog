@@ -6,7 +6,7 @@
 
 但是对于上了一定规模的程序而言，靠人脑是很难避免循环引用的。同样使用引用计数的语言比如 Objc，它是通过提供一些编程规范，比如 [Advanced Memory Management Programming Guide][link2]，然后配以工具进行静态分析，帮助程序员来在程序运行前就发现可能的循环引用。
 
-PHP 作为动态类型的语言，我想应该很重复难使用静态类型语言中的分析技术 (比如 Objc 中的)，来给程序员提供一个分析工具以发现潜在的循环引用。但是我想 PHP 团队之所以没有提供静态分析工具的另外一个主要原因就是 [Reference Counting Basics][link1] 所说的：
+PHP 作为动态类型的语言，我想应该很难复用静态类型语言中的分析技术 (比如 Objc 中的)，来给程序员提供一个分析工具以发现潜在的循环引用。但是我想 PHP 团队之所以没有提供静态分析工具的另外一个主要原因就是 [Reference Counting Basics][link1] 所说的：
 
 > Fortunately, PHP will clean up this data structure at the end of the request, but before then, this is taking up valuable space in memory.
 
