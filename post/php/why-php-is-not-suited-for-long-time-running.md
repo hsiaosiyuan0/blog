@@ -23,7 +23,7 @@ PHP 作为一个 WEB 专门的语言，最常用的方式就是嵌入到 cgi 程
 
 > If the root buffer becomes full with possible roots while the garbage collection mechanism is turned off, further possible roots will simply not be recorded. Those possible roots that are not recorded will never be analyzed by the algorithm. If they were part of a circular reference cycle, they would never be cleaned up and would create a memory leak
 
-所以目前的 GC 功能只能说是可以稍微缓解下循环引用导致的内存泄露，可以稍微延长一下 PHP 持续运行的时间，但是由于缺乏静态分析工具，目前 PHP 仍然不适合长时间运行。
+所以目前的 GC 功能只能说是可以稍微缓解下循环引用导致的内存泄露，可以稍微延长一下 PHP 持续运行的时间，但是由于缺乏静态分析工具和更有效的 GC，目前 PHP 仍然不适合长时间运行。
 
 [link1]: http://php.net/manual/en/features.gc.refcounting-basics.php
 [link2]: https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html
