@@ -57,11 +57,7 @@
 这是我为了完成自己的 IM 的第二章，使用 Objective-C 写的一个 WebSocket Client Component，这样就不用使用在 webview 中的 websocket 实现了。
 
 ####[KiwiChat](https://github.com/mconintet/KiwiChat)
-[开源中国](http://www.oschina.net/)首页推荐项目：
-
-![](http://og9g58alt.bkt.clouddn.com/Snip20151108_1.png)
-
-项目在开源中国的地址: [KiwiChat@OSC](http://git.oschina.net/mconintet/KiwiChat)
+[开源中国](http://www.oschina.net/)首页[推荐](http://og9g58alt.bkt.clouddn.com/Snip20151108_1.png)项目。项目在开源中国的地址: [KiwiChat@OSC](http://git.oschina.net/mconintet/KiwiChat)
 
 这是我使用 Objc 制作的 iOS IM 客户端。包含了一些基本功能：
 
