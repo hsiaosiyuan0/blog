@@ -11,8 +11,8 @@
 | 出生年月  | 1990.4  |
 | 学历  | 本科  |
 | Email  | mconintet@163.com  |
-| 博客  | [简书](http://jianshu.mconintet.com) [掘金](https://gold.xitu.io/user/565a3eaf60b2597424ede840)  |
-| github  | [mconintet](http://github.mconintet.com) [hsiaosiyuan0](https://github.com/hsiaosiyuan0) |
+| 博客  | [简书](http://www.jianshu.com/u/342aaba5c859) [掘金](https://gold.xitu.io/user/565a3eaf60b2597424ede840)  |
+| github  | [mconintet](https://github.com/mconintet) [hsiaosiyuan0](https://github.com/hsiaosiyuan0) |
 
 ## 工作经历
 
