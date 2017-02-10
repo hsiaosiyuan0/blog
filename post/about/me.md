@@ -18,7 +18,7 @@
 
 ### 2015.12 - 今
 
-  任职于 [南京芝麻信息科技有限公司](http://www.zhimatech.com/)，前期负责公司 iOS 应用，的开发，上架了两款 App (一款使用 Object-C 作为开发语言，一款是 Swift 作为的开发语言)。
+  任职于 [南京芝麻信息科技有限公司](http://www.zhimatech.com/)，前期负责公司 iOS 应用的开发，上架了两款 App (一款使用 Object-C 作为开发语言，一款是 Swift 作为的开发语言)。
   
   后期负责 Web 前端工作，负责公司三个后台系统的代码编写以及公司官网的切图。所涵盖的前端工作内容从 Photoshop，AI，Sketch 切图到 Vuejs 最终实现。
   
