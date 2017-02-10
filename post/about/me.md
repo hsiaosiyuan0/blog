@@ -100,7 +100,7 @@
   这是一个使用 Koa2 实现的简单的博客系统。在内部它通过 Koa-router 来完成路由，Koa-static2 来处理静态文件，handlebars 作为模板引擎。在使用 Koa-router 时，使用了 ES7 中的 decorator 来实现类似 java 中当定义一个 router handler 时通过 Annotation 来标注其对应的 router pattern 的功能，比如：
   
  ```js
-  class Post{
+  class Post {
     @route.pattern('/')
     async list(ctx, next) {}
   }
