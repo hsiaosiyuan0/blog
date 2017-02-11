@@ -89,6 +89,10 @@
 
   使用 js 编写的最简正则表达式引擎，用来学习了解和窥视一下正则表达式引擎的内部原理。
   
+* [vue-component](https://github.com/hsiaosiyuan0/vue-component)
+
+  vue-cli 的模板，方便编写和发布自己的 vue component。
+  
 ### 后端 (PHP, nodejs，koa2)
 
 * [PHP MVC Toolkit](https://github.com/mconintet/lce)
