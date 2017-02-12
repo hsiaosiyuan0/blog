@@ -93,6 +93,10 @@
 
   vue-cli 的模板，方便编写和发布自己的 vue component。
   
+* [vue-datepicker](https://github.com/hsiaosiyuan0/vue-datepicker)
+
+  vue 日期拾取组件，支持选择单个日期和日期区间，内部使用 moment.js 来操作 date。
+  
 ### 后端 (PHP, nodejs，koa2)
 
 * [PHP MVC Toolkit](https://github.com/mconintet/lce)
