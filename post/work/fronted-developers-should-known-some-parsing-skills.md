@@ -67,6 +67,6 @@ RETURN_ORDER_CNT/(RETURN_ORDER_CNT+SUB_PAY_ORDER_CNT)
   ```
 2. 然后逐个弹出栈中的内容，如果是运算符，就分别弹出两个操作数，如果操作数又是运算符，那么就递归调用，如果操作数是标识符，那么就带入之前的简单指标请求的结果，最后根据不同的运算符来对两个操作数进行运算。
 
-这是一个在线的预览 [复合指标计算](https://jsfiddle.net/cr17w07q/)，点击了 run 之后，打开 console 看下是否有没有通过的 assert 就可以了。
+这是一个在线的预览 [复合指标计算](https://jsfiddle.net/hsiaosiyuan/cr17w07q/5/)，点击了 run 之后，打开 console 看下是否有没有通过的 assert 就可以了。
 
 之所以记录这个问题，是因为它比较有代表性 - 既有技术上的细节，也有工作态度的一些描述。
