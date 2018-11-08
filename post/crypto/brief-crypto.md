@@ -27,7 +27,7 @@
 
 RSA 和 ECDSA 的比较可以参考 [ECDSA and RSA](https://equaleyes.com/blog/2018/04/06/ecdsa-and-rsa-algorithms/)，简单的来说 ECDSA 有如下几个优点
 
-1. 在与 RSA 达到相同加密程度下的 key 尺寸更小
+1. 在与 RSA 达到相同加密程度下的 key 尺寸更小 见 [Elliptic_Curve_Cryptography](https://wiki.openssl.org/index.php/Elliptic_Curve_Cryptography)
 2. 在与 RSA 达到相同加密程度下的 key 生成更快
 3. 加解密比 RSA 快点
 
