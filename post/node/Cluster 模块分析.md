@@ -93,7 +93,7 @@ isMaster: false pid: 30096
 1. master 开始运行，即条件分支中的 `cluster.isMaster` 分支被执行，创建了 2 个子进程
 2. 在 2 个子进程中 `else` 分支被执行
 
-这里其实有 3 个值得思考的问题:
+这里有几个值得思考的问题:
 
 1. cluster 模块是如何区别 master 和 work 进程的；换言之，work 进程是如何被创建的
 2. 多个 work 进程中，都执行了 `listen` 方法，为什么没有报错 `ERR_SERVER_ALREADY_LISTEN`
@@ -123,7 +123,7 @@ console.log("sub: " + process.pid);
 
 运行 `./out/Debug/node test-fork-exit.js` 后，会发现 master 进程在创建了两个进程后退出了。
 
-接下来将对上述三个问题进行分析。
+接下来将对上述几个问题进行分析。
 
 ## 问题1. work 进程的创建
 
@@ -343,8 +343,8 @@ else
 
 之所以子进程中都会执行 listen 方法，而不报错的原因小结如下:
 
-1. 子进程中并没有执行实际的 listen 动作，取而代之的是通过发生消息，请求父进程来执行 listen
-2. 父进程中的 listen 由于相同的 key 使得动作被合并，最终只 listen 了一次
+1. 子进程中并没有执行实际的 listen 动作，取而代之的是通过发送消息，请求父进程来执行 listen
+2. 父进程中的 listen 由于相同的 key 使得多次动作被合并，最终只 listen 了一次
 
 ## 问题3. 不退出
 
@@ -485,7 +485,7 @@ const server = handles.get(key);
 server.onconnection(0, handle);
 ```
 
-接来下先搞清楚 `server` 是什么时候被添加进 `handles` 中的，然后再看看 `server.onconnection` 做了上面。
+接来下先搞清楚 `server` 是什么时候被添加进 `handles` 中的，然后再看看 `server.onconnection` 做了什么。
 
 回顾下子进程中所做的事情，可以结合上面的章节。另外，为了方便结合代码进行理解，故同时给出具体的代码位置:
 
@@ -494,7 +494,7 @@ server.onconnection(0, handle);
 3. work 进程调用 `net.Server::listenInCluster` [code](https://github.com/nodejs/node/blob/v11.6.0/lib/net.js#L1293)
 4. work 进程调用 cluster child 模块上的 `_getServer`，并期望被回调 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/net.js#L1316)
 5. work 向 master 进程发送 `queryServer` 消息，并期望被回调 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/internal/cluster/child.js#L86)
-6. master 构造 `RoundRobinHandle` 实例，并将发送 `queryServer` 消息的 work 注册到其中，并期望被回调。在回调中，会向 work 发送消息，触发第 5 步中 work 期望的回调 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/internal/cluster/master.js#L317)
+6. master 构造 `RoundRobinHandle` 实例，并将发来 `queryServer` 消息的 work 注册到其中，并期望被回调。在回调中，会向 work 发送消息，触发第 5 步中 work 期望的回调 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/internal/cluster/master.js#L317)
 7. 第 6 步中的回调参数 handle 都将是 false 值 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/internal/cluster/round_robin_handle.js#L42)
 8. 从而当回调到第 5 步时，work 进程将执行 `rr` 方法，该方法会伪造一个 handle 对象，加入到 handles 中，并以该对象回调第 4 步 [code](https://github.com/nodejs/node/blob/v11.6.0/lib/internal/cluster/child.js#L171)
 9. work 进程中开始执行第 4 步的回调函数 `listenOnMasterHandle`，该函数中设定了 `server._handle = handle`，注意这里的 handle 即为上一步产生的 handle；并调用了 `listen2` [code](https://github.com/nodejs/node/blob/v11.6.0/lib/net.js#L1327)
