@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "record coding life.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "re-index": "node --no-warnings re-index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsiaosiyuan0/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsiaosiyuan0/blog/issues"
+  },
+  "homepage": "https://github.com/hsiaosiyuan0/blog#readme",
+  "dependencies": {}
+}
