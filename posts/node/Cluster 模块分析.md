@@ -1,6 +1,6 @@
-# Cluser 模块分析
+# Cluster 模块分析
 
-- [Cluser 模块分析](#cluser-%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90)
+- [Cluster 模块分析](#cluster-%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90)
   - [预备工作](#%E9%A2%84%E5%A4%87%E5%B7%A5%E4%BD%9C)
   - [发现问题](#%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98)
   - [问题1. work 进程的创建](#%E9%97%AE%E9%A2%981-work-%E8%BF%9B%E7%A8%8B%E7%9A%84%E5%88%9B%E5%BB%BA)
