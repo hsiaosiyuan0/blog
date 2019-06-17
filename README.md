@@ -9,9 +9,8 @@ Feel free to use them and leave something by submitting issues :)
 ## 目录
 
 <!-- index begin -->
-* assembly-language
-  * guide-to-assembly-language-programming-in-linux
-      * [汇编语言学习小结](%2Fposts%2Fassembly-language%2Fguide-to-assembly-language-programming-in-linux%2F%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93.md)
+* assembly
+    * [汇编语言学习小结](%2Fposts%2Fassembly%2F%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E5%B0%8F%E7%BB%93.md)
 
 * blockchain
     * [crypto-conditions 简述](%2Fposts%2Fblockchain%2Fcrypto-conditions%20%E7%AE%80%E8%BF%B0.md)
