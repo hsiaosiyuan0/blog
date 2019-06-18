@@ -25,6 +25,9 @@ Feel free to use them and leave something by submitting issues :)
 * crypto
     * [brief-crypto](%2Fposts%2Fcrypto%2Fbrief-crypto.md)
 
+* javascript
+    * [Javascript 内部的字符编码是 UCS-2 还是 UTF16](%2Fposts%2Fjavascript%2FJavascript%20%E5%86%85%E9%83%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%98%AF%20UCS-2%20%E8%BF%98%E6%98%AF%20UTF16.md)
+
 * node
     * [Cluster 模块分析](%2Fposts%2Fnode%2FCluster%20%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90.md)
 
