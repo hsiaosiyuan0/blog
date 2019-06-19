@@ -64,13 +64,13 @@ SourceCharacter ::
 
 > JavaScript treats code units as individual characters, while humans generally think in terms of Unicode characters. 
 
-也就是说，Javascript 内部认为一个编码单元就是一个字符，而通常以人类的角度来说一个字符的指的是 Unicode 中的字符。比如 `'𝌆'.length == 2` 以及 '𝌆' == '\uD834\uDF06'。
+也就是说，JavaScript 内部认为一个编码单元就是一个字符，而通常以人类的角度来说一个字符的指的是 Unicode 中的字符。比如 `'𝌆'.length == 2` 以及 '𝌆' == '\uD834\uDF06'。
 
 > You could argue that it resembles UTF-16, except unmatched surrogate halves are allowed, surrogates in the wrong order are allowed, and surrogate halves are exposed as separate characters. I think you’ll agree that it’s easier to think of this behavior as “UCS-2 with surrogates”.
 
 > Surrogate pairs are only recombined into a single Unicode character when they’re displayed by the browser (during layout). This happens outside of the JavaScript engine. To demonstrate this, you could write out the high surrogate and the low surrogate in separate document.write() calls: document.write('\uD834'); document.write('\uDF06');. This ends up getting rendered as 𝌆 — one glyph.
 
-代理对在整个 Javascript 内部都被当做是两个 “字符”，之所以们在浏览器中看到 non-BMP 是因为在浏览器渲染部分会对其进行重组。
+代理对在整个 JavaScript 内部都被当做是两个 “字符”，之所以们在浏览器中看到 non-BMP 是因为在浏览器渲染部分会对其进行重组。
 
 > ECMAScript 6 will support a new kind of escape sequence in strings, namely Unicode code point escapes e.g. \u{1D306}. Additionally, it will define String.fromCodePoint and String#codePointAt, both of which accept code points rather than code units.
 
