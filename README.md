@@ -27,8 +27,10 @@ Feel free to use them and leave something by submitting issues :)
 
 * javascript
     * [Javascript 内部的字符编码是 UCS-2 还是 UTF16](%2Fposts%2Fjavascript%2FJavascript%20%E5%86%85%E9%83%A8%E7%9A%84%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E6%98%AF%20UCS-2%20%E8%BF%98%E6%98%AF%20UTF16.md)
+    * [generator function](%2Fposts%2Fjavascript%2Fgenerator%20function.md)
     * [解析 JSON 的成本](%2Fposts%2Fjavascript%2F%E8%A7%A3%E6%9E%90%20JSON%20%E7%9A%84%E6%88%90%E6%9C%AC.md)
     * [闭包](%2Fposts%2Fjavascript%2F%E9%97%AD%E5%8C%85.md)
+    * [闭包的作用](%2Fposts%2Fjavascript%2F%E9%97%AD%E5%8C%85%E7%9A%84%E4%BD%9C%E7%94%A8.md)
 
 * node
     * [Cluster 模块分析](%2Fposts%2Fnode%2FCluster%20%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90.md)
