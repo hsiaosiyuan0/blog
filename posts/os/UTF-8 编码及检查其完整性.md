@@ -63,7 +63,7 @@ UTF-8 的全称是 **8-bit Unicode Transformation Format** 中文就是 “8 位
 ## 代码
 先放 javascript 的，注意这里使用了 ES6 中的 `String.prototype.codePointAt` 方法，因为在 ES5 中对于超过了 `0xFFFF` 的字符使用 `String.prototype.charCodeAt` 并不能正确的获取其 unicode 编码:
 
-```
+```js
 "use strict";
 
 console.assert(typeof String.prototype.codePointAt == 'function', "Current env doesn't support ECMAScript 6!");
@@ -141,7 +141,7 @@ console.assert(utf82unicode([0xF0, 0x9F, 0x98, 0x84]) == '😄'.codePointAt(0), 
 
 接下来是 golang 的，其中的 `IsIntactUtf8` 函数就是本文讨论的主题 - 检查UTF-8编码的完整性：
 
-```
+```go
 func Unicode2utf8(u uint32) (u8 []byte, err error) {
 	if u <= 0x7F {
 		return []byte{byte(u)}, nil
