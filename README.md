@@ -44,6 +44,9 @@ Feel free to use them and leave something by submitting issues :)
 * php
     * [为什么 PHP 不适合长时间运行](%2Fposts%2Fphp%2F%E4%B8%BA%E4%BB%80%E4%B9%88%20PHP%20%E4%B8%8D%E9%80%82%E5%90%88%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C.md)
 
+* static-analysis
+    * [ternjs](%2Fposts%2Fstatic-analysis%2Fternjs.md)
+
 * websocket
     * [WebSocket 协议 1~4 节](%2Fposts%2Fwebsocket%2FWebSocket%20%E5%8D%8F%E8%AE%AE%201~4%20%E8%8A%82.md)
     * [WebSocket 协议 5~10 节](%2Fposts%2Fwebsocket%2FWebSocket%20%E5%8D%8F%E8%AE%AE%205~10%20%E8%8A%82.md)
