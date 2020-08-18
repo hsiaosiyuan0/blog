@@ -23,7 +23,7 @@ Rust 受到 [OCaml](https://ocaml.org/) 这样函数式语言的影响，对变�
 
 回到 Rust 中，它虽然没有沿用上面的语法，但是它对作用域的理解和定义，却是和上面相同的，比如手册中的例子：
 
-```rs
+```rust
 {
     let x = 5;              // ----------+-- 'b
                             //           |
@@ -38,7 +38,7 @@ Rust 受到 [OCaml](https://ocaml.org/) 这样函数式语言的影响，对变�
 
 ## 作用域标识
 
-```rs
+```rust
 {
     let r;                  // ---------+-- 'a
                             //          |
@@ -63,7 +63,7 @@ Rust 受到 [OCaml](https://ocaml.org/) 这样函数式语言的影响，对变�
 
 虽然静态作用域可以静态分析，但是它始终是一个运行时的概念 - 程序运行阶段，变量才是真正绑定到内存空间的某一块的；而对于函数，它在运行就类似一个模板，等到被调用时才会准备其调用环境（调用栈、参数传递等等），所以对于函数的定义，如果参数是引用类型，该参数的作用域要如何描述呢？
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -77,7 +77,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 像上面的例子这样，引用类型形参的 lifetime 通过 lifetime annotation 来标注。例子中的 `'a` 和下面的 `'a` 有什么联系吗？
 
-```rs
+```rust
 {
     let x = 5;              // ----------+-- 'b
                             //           |
@@ -120,7 +120,7 @@ swapTwoValues(&someInt, &anotherInt)
 
 Rust 函数签名中的作用域泛型参数，除了作为「作用域标识占位符标记」这个作用外，还起到「说明入参的作用域和返回值的作用域、之间的关系」的作用，比如上面的例子中：
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str
 ```
 
@@ -134,7 +134,7 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str
 
 来看下面的例子，这个例子中 `longest` 签名中只使用了一个作用域参数，但是 `longest` 被调用时，涉及到 3 个不同的作用域：
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -163,7 +163,7 @@ fn main() {
 
 例3 中在调用 `longest(&a, &b)` 时，入参加上返回值涉及到 3 个不同的作用域。所以，虽然 `longest` 签名中只使用了一个作用域参数，但并不表示实际的作用域必须唯一 - 实际的作用域可以为多个，不过这些作用域需要是包含的关系，在调用时会被替换为 3 者间最小范围的作用域。下面我们将代码进行作用域的补全，来演示 `borrow checker` 的工作方式（注意这并不是 Rust 的语法，只是用来演示）：
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -186,7 +186,7 @@ fn main() {
 
 我们看到在调用时，`borrow checker` 会做作用域的转换 `as`，比如 `&'a a as &'c a`。我们知道这样的转换是能成功的，因为作用域 `'a` 包含了作用域 `'c`。知道了这个转换过程后，下面的错误例子应该就变得很好理解了：
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
@@ -214,7 +214,7 @@ fn main() {
 
 作为对比，我们可以看下面这个稍微修改后的例子：
 
-```rs
+```rust
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x
