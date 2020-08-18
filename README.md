@@ -35,6 +35,9 @@ Feel free to use them and leave something by submitting issues :)
 * node
     * [Cluster 模块分析](%2Fposts%2Fnode%2FCluster%20%E6%A8%A1%E5%9D%97%E5%88%86%E6%9E%90.md)
 
+* oop
+    * [ioc](%2Fposts%2Foop%2Fioc.md)
+
 * os
     * [UTF-8 编码及检查其完整性](%2Fposts%2Fos%2FUTF-8%20%E7%BC%96%E7%A0%81%E5%8F%8A%E6%A3%80%E6%9F%A5%E5%85%B6%E5%AE%8C%E6%95%B4%E6%80%A7.md)
     * [大小端序](%2Fposts%2Fos%2F%E5%A4%A7%E5%B0%8F%E7%AB%AF%E5%BA%8F.md)
@@ -43,6 +46,9 @@ Feel free to use them and leave something by submitting issues :)
 
 * php
     * [为什么 PHP 不适合长时间运行](%2Fposts%2Fphp%2F%E4%B8%BA%E4%BB%80%E4%B9%88%20PHP%20%E4%B8%8D%E9%80%82%E5%90%88%E9%95%BF%E6%97%B6%E9%97%B4%E8%BF%90%E8%A1%8C.md)
+
+* rust
+    * [lifetime](%2Fposts%2Frust%2Flifetime.md)
 
 * static-analysis
     * [ternjs](%2Fposts%2Fstatic-analysis%2Fternjs.md)
