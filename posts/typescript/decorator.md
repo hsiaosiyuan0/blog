@@ -1,4 +1,4 @@
-# decorator has different implementations in babel and tsc
+# Decorator has different implementations in babel and tsc
 
 Assuming we have below code:
 
@@ -73,3 +73,31 @@ let AppController = _decorate([(0, _common.Controller)()], function (_initialize
   };
 });
 ```
+
+The babel's result works fine when the type information is meaningless, but it will break in some situations which the type information is one of its important factors, for example, the nestjs use the type information to do its dependency injection:
+
+```ts
+import { Controller, Get, Post, Body } from '@nestjs/common';
+import { CreateCatDto } from './dto/create-cat.dto';
+import { CatsService } from './cats.service';
+import { Cat } from './interfaces/cat.interface';
+
+@Controller('cats')
+export class CatsController {
+  constructor(private catsService: CatsService) {}
+  // compare with below
+  // constructor(private @inject(CatsService) catsService: CatsService) {}
+
+  @Post()
+  async create(@Body() createCatDto: CreateCatDto) {
+    this.catsService.create(createCatDto);
+  }
+
+  @Get()
+  async findAll(): Promise<Cat[]> {
+    return this.catsService.findAll();
+  }
+}
+```
+
+Just record a funny point
