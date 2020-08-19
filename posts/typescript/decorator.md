@@ -100,4 +100,4 @@ export class CatsController {
 }
 ```
 
-Just record a funny point
+Just record a funny point.
