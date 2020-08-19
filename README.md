@@ -53,6 +53,9 @@ Feel free to use them and leave something by submitting issues :)
 * static-analysis
     * [ternjs](%2Fposts%2Fstatic-analysis%2Fternjs.md)
 
+* typescript
+    * [decorator](%2Fposts%2Ftypescript%2Fdecorator.md)
+
 * websocket
     * [WebSocket 协议 1~4 节](%2Fposts%2Fwebsocket%2FWebSocket%20%E5%8D%8F%E8%AE%AE%201~4%20%E8%8A%82.md)
     * [WebSocket 协议 5~10 节](%2Fposts%2Fwebsocket%2FWebSocket%20%E5%8D%8F%E8%AE%AE%205~10%20%E8%8A%82.md)
