@@ -1,5 +1,7 @@
 # decorator has different implementations in babel and tsc
 
+Assuming we have below code:
+
 ```ts
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
@@ -15,7 +17,7 @@ export class AppController {
 }
 ```
 
-for tsc with the option `emitDecoratorMetadata` is turned on：
+for tsc with the option `emitDecoratorMetadata` is turned on, above code will be translated into：
 
 ```js
 import { Controller, Get } from '@nestjs/common';
@@ -38,13 +40,14 @@ let AppController = /** @class */ (() => {
     ], AppController.prototype, "getHello", null);
     AppController = __decorate([
         Controller(),
+        // see here, the parameter type is retained
         __metadata("design:paramtypes", [typeof (_a = typeof AppService !== "undefined" && AppService) === "function" ? _a : Object])
     ], AppController);
     return AppController;
 })();
 ```
 
-however, since babel's translate process will remove the types before it's doing the actual translating process, the type information is missing from the decorate metadata:
+However, since babel's internal translation process will remove the types before it's doing the actual translating process, the type information is missed from the decorate metadata:
 
 ```js
 let AppController = _decorate([(0, _common.Controller)()], function (_initialize) {
