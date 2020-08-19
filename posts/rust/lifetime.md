@@ -254,3 +254,4 @@ fn main() {
 
 - https://doc.rust-lang.org/1.9.0/book/lifetimes.html
 - https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html
+- https://stackoverflow.com/questions/29861388/when-is-it-useful-to-define-multiple-lifetimes-in-a-struct
