@@ -74,7 +74,7 @@ let AppController = _decorate([(0, _common.Controller)()], function (_initialize
 });
 ```
 
-The babel's result works fine when the type information is meaningless, but it will break in some situations which the type information is one of their important factors, for example, the nestjs use the type information to do its dependency injection:
+The babel's result works fine when the type information is meaningless for your program, but it will break in some situations when the type information is one of the important factors of your framework, for example, the nestjs use the type information to do its dependency injection:
 
 ```ts
 import { Controller, Get, Post, Body } from '@nestjs/common';
@@ -99,5 +99,7 @@ export class CatsController {
   }
 }
 ```
+
+If the code is processed by babel then the dependency injection by constructor property cannot be applied since the type information is discarded.
 
 Just record a funny point.
