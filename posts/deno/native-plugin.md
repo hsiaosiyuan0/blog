@@ -107,3 +107,19 @@ match op_fn {
 ## 访问 Isolate 信息
 
 最初的学习是希望 native plugin 中可以访问到 `v8::Isolate` 从而拿到运行时的信息做简单的监控，目前看来插件 API 并没有将这块的访问开放出来，可能需要提个 issue 去问一问
+
+目前看来可以通过自己定义调用签名的方式来完成调用，有待验证其他方法，因为 version 是在 read-only 区的，也就是 `'static` lifetime 的，所以成功的结果不太有力：
+
+```rust
+extern "C" {
+    fn v8__V8__GetVersion() -> *const c_char;
+}
+
+pub fn gc_stats(_interface: &mut dyn Interface, _zero_copy: &mut [ZeroCopyBuf]) -> Op {
+    unsafe {
+        let c_str: &CStr =  CStr::from_ptr(v8__V8__GetVersion());
+        println!("{:?}", c_str.to_str());
+    }
+    Op::Sync(Box::new([]))
+}
+```
