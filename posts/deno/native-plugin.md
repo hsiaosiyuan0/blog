@@ -1,5 +1,9 @@
 # deno native plugin 内部实现机制
 
+## demo
+
+可以使用 [create-deno-plugin](https://github.com/chiefbiiko/create-deno-plugin) 创建一个插件工程，方便对插件有个具象化的感知
+
 ## 插件注册
 
 1. 首先是载入 dynamic library 见 [deno/cli/ops/plugin.rs#L59](https://github.com/denoland/deno/blob/master/cli/ops/plugin.rs#L59)，并找到模块中的符号 `deno_plugin_init`，这是 deno 扩展机制和插件开发者约定的入口
